@@ -1,7 +1,7 @@
 ﻿/** @jsx React.DOM */
 var React = require('react');
 
-var CommentForm = React.createClass({
+var CommentForm = React.createClass({displayName: 'CommentForm',
     handleSubmit: function() {
         var author = this.refs.author.getDOMNode().value.trim();
         var text = this.refs.text.getDOMNode().value.trim();
@@ -17,16 +17,16 @@ var CommentForm = React.createClass({
     },
     render: function () {
         return (
-           <form className="commentForm" onSubmit={this.handleSubmit}>
-           <p>
-                <input type="text" placeholder="Your name" ref="author"/>
-            </p>
-            <p>
-                <textarea name="text" cols="60" rows="10" placeholder="Tell us how you feel" ref="text"/>
-            </p>
+           React.DOM.form( {className:"commentForm", onSubmit:this.handleSubmit}, 
+           React.DOM.p(null, 
+                React.DOM.input( {type:"text", placeholder:"Your name", ref:"author"})
+            ),
+            React.DOM.p(null, 
+                React.DOM.textarea( {name:"text", cols:"60", rows:"10", placeholder:"Tell us how you feel", ref:"text"})
+            ),
 
-            <input type="submit" value="Post" />
-          </form>
+            React.DOM.input( {type:"submit", value:"Post"} )
+          )
             );
     }
 });

@@ -5,7 +5,7 @@ var CommentForm = require('./CommentForm');
 var Mediator = require('../../src/Mediator');
 var data = require('../../src/model/data');
 
-var CommentBox = React.createClass({displayName: 'CommentBox',
+var CommentBox = React.createClass({
     getInitialState: function () {
         return {data: []}
     },
@@ -21,11 +21,11 @@ var CommentBox = React.createClass({displayName: 'CommentBox',
     },
     render: function () {
         return (
-            React.DOM.div( {className:"commentBox"}, 
-                React.DOM.h1(null, "Comments"),
-                CommentList( {data:this.state.data}),
-                CommentForm( {onCommentSubmit:this.handleCommentSubmit})
-            )
+            <div className="commentBox">
+                <h1>Comments</h1>
+                <CommentList data={this.state.data}/>
+                <CommentForm onCommentSubmit={this.handleCommentSubmit}/>
+            </div>
         );
     }
 });

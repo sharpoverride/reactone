@@ -1,0 +1,2 @@
+﻿/** @jsx React.DOM */
+var React = require('react');var Text = React.createClass({displayName: 'Text',  render: function() {    return (      React.DOM.span( {className:"text"},       this.props.text      )    )  }});module.exports = Text;

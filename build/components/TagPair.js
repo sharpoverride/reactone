@@ -1,0 +1,2 @@
+﻿/** @jsx React.DOM */
+var React = require('react');var TagPair = React.createClass({  render: function() {    return (      <div className="tag-pair">        <span className="start-tag">        {this.props.startTagDisplayText}        </span>        {this.props.inlineContent}        <span className="end-tag">        {this.props.endTagDisplayText}      </span>      </div>    )  }});module.exports = TagPair;

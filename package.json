@@ -1,0 +1,28 @@
+{
+  "name": "reactone",
+  "version": "0.0.1",
+  "description": "Provides the basis of working with react and browserify",
+  "main": "src/main.js",
+  "scripts": {
+    "test": "karma start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sharpoverride/reactone.git"
+  },
+  "keywords": [
+    "ReactJs",
+    "browserify"
+  ],
+  "author": "Mihai Lazar",
+  "license": "MS-PL",
+  "bugs": {
+    "url": "https://github.com/sharpoverride/reactone/issues"
+  },
+  "homepage": "https://github.com/sharpoverride/reactone",
+  "devDependencies": {
+    "envify": "^1.2.1",
+    "react": "^0.10.0",
+    "watchify": "^0.10.2"
+  }
+}

@@ -1,0 +1,3 @@
+﻿/** @jsx React.DOM */
+var React = require('react');var Text = require('./Text');var Segment = React.createClass({displayName: 'Segment',  render: function () {    var content = this.props.content.map(function(content){      console.log('content', content);      if (content.type === 'text') {        return (Text( {text:content.text} ));      }    });    return (          React.DOM.div( {className:this.props.type}, 
+          "segment ", this.props.type, " ", content          )      )  }});module.exports = Segment;

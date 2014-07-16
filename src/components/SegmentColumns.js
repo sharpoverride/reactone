@@ -1,0 +1,2 @@
+﻿/** @jsx React.DOM */
+var React = require('react');var InnerContent = require('./InnerContent');var Columns = React.createClass({displayName: 'Columns',  render: function () {    var segment = this.props.segment;    return (        React.DOM.div( {className:"segment", key:segment.id},           InnerContent( {type:"source", content:segment.source} ),          InnerContent( {type:"target", content:segment.target} )        )      )    }});module.exports = Columns;
