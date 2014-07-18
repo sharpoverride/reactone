@@ -44,6 +44,13 @@
        {
          type: 'tagpair',
          startTagDisplayText: '<a>',
+         childNodes: [
+         {
+           type: 'text',
+           text: 'inside tag pair content'
+         }
+
+         ],
          endTagDisplayText: '</a>'
 
        },
@@ -93,8 +100,13 @@
        {
          type: 'tagpair',
          startTagDisplayText: '<a>',
-         endTagDisplayText: '</a>'
-
+         endTagDisplayText: '</a>',
+         childNodes: [
+         {
+           type: 'text',
+           text: 'inside tag pair content translated'
+         }
+         ]
        },
        {
          type: 'text',

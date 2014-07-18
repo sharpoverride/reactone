@@ -1,0 +1,2 @@
+﻿/** @jsx React.DOM */
+var React = require('react');var ContextInformationColumn = React.createClass({  render: function () {    var childNodes = this.props.segments.map( function (segment, index) {      return (<div key={index} className="ue-cell">        P+      </div>)    });    return (<div className="ue-context">    </div>);  }});module.exports = ContextInformationColumn;

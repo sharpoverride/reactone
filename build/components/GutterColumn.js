@@ -1,0 +1,2 @@
+﻿/** @jsx React.DOM */
+var React = require('react');var GutterColumn = React.createClass({  render: function () {    var cells = this.props.segments.map(function(segment, index){      return (<div key={index} className="ue-cell">        {segment.id}      </div>);    });    return (<div className="ue-gutter">      {cells}    </div>);  }});module.exports = GutterColumn;

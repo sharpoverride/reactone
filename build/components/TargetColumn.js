@@ -1,0 +1,2 @@
+﻿/** @jsx React.DOM */
+var React = require('react');var InnerContent = require('./InnerContent');var TargetColumn = React.createClass({  render: function(){    var childNodes = this.props.segments.map( function(segment, index) {      return (<InnerContent          key={index}          classId={'segment_' + segment.id}          type="target"          content={segment.target}          />)    });    return (<div className="ue-target" contentEditable="true">      {childNodes}    </div>);  }});module.exports = TargetColumn;

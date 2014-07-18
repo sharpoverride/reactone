@@ -1,0 +1,28 @@
+.wrapper {
+  position: relative;
+  overflow: hidden;
+  overflow-y: scroll;
+
+  margin-bottom: 26px; // make sure content is not hidden by the status bar
+
+  &-west,
+  &-east {
+    height: 100%;
+  }
+
+  &-north,
+  &-west,
+  &-east {
+    position: relative;
+    padding: 0;
+  }
+
+  &-north {
+    z-index: 1000;
+    .box-shadow(0px 1px 3px fade(@sdl-gray-dark-slate, 15%));
+  }
+
+  &-east {
+    border-left: 1px solid @sdl-dark-border;
+  }
+}

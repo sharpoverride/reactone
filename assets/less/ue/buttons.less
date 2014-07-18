@@ -1,0 +1,70 @@
+.btn {
+  &-ribbon {
+    float: left;
+    width: auto;
+
+    background-image: none;
+    background-color: transparent;
+    border: 1px solid transparent;
+
+    text-align: center;
+
+
+
+    &[type="button"]:hover,
+    &[type="button"].active {
+      border: 1px solid @sdl-blue-dodger;
+      .border-radius(4px);
+      background-image: none;
+      background-color: fade(@sdl-white, 80%);
+      .box-shadow(none);
+      .background-clip(padding-box);
+    }
+
+    &[type="button"]:focus,
+    &[type="button"]:active {
+      outline: none;
+    }
+
+    &.disabled,
+    &[disabled] {
+      cursor: not-allowed;
+      pointer-events: none;
+      .opacity(0.4);
+      .box-shadow(none);
+    }
+
+    &.btn-ribbon-lg {
+      width: 64px;
+      height: 70px;
+
+      white-space: normal;
+      line-height: 1;
+
+      img {
+        display: block;
+        margin: 0 auto;
+      }
+    }
+
+    &.btn-ribbon-sm {
+      display: block;
+      clear: both;
+      width: auto;
+      height: 22px;
+      margin-bottom: 2px;
+      padding: 0 3px 1px;
+
+      text-align: left;
+
+      img {
+        vertical-align: text-bottom;
+      }
+    }
+
+    span {
+      font-size: 11px;
+      color: @sdl-gray-lighter;
+    }
+  }
+}

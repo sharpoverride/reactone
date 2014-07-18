@@ -1,0 +1,151 @@
+.navbar {
+  &-custom {
+    min-height: @navbar-height;
+    margin-bottom: 0;
+    box-sizing: border-box;
+
+    background-color: @sdl-gray-dark;
+
+    border-top: 1px solid @sdl-gray-dark;
+    border-bottom: 1px solid @sdl-gray-darker;
+
+    .box-shadow(~"inset 0 1px 0 rgba(255, 255, 255, .25)");
+  }
+
+  &-ribbon {
+    border: 0 none;
+    .box-shadow(0 1px 3px fade(@sdl-gray-dark-slate, 15%));
+
+    &.navbar-fixed-top {
+      top: 32px; // put the ribbon under main nav
+      z-index: @zindex-navbar-fixed - 5;
+    }
+  }
+
+  &-nav {
+    > .btn-menu {
+      a {
+        padding-left: 6px;
+        padding-right: 8px;
+        font-size: 18px;
+
+        border-left: 1px solid @sdl-gray-dark-slate;
+        border-right: 1px solid @sdl-gray-dark-slate;
+
+        [class^="icon-sdl-"]:before,
+        [class*=" icon-sdl-"]:before {
+          margin-left: 0;
+          margin-right: 0;
+        }
+
+        &:hover,
+        &:focus,
+        &:active {
+          border-left: 1px solid @sdl-gray-darker;
+          border-right: 1px solid @sdl-gray-darker;
+        }
+      }
+
+      &.active {
+        background-color: @sdl-blue-dodger;
+        .box-shadow(~"inset 0 1px 0 rgba(255, 255, 255, .25)");
+
+        > a:before,
+        > a:after {
+          display: none;
+          border: 0 none;
+        }
+      }
+    }
+
+    > li {
+      &.active > a {
+        position: relative;
+
+        &:before,
+        &:after {
+          position: absolute;
+          bottom: -1px;
+          left: 50%;
+          width: 0px;
+          height: 0px;
+
+          content: '';
+
+          border-style: solid;
+        }
+
+        &:before {
+          margin-left: -6px;
+
+          border-width: 0 6px 6px 6px;
+          border-color: transparent transparent @sdl-gray-dark-slate transparent;
+        }
+
+        &:after {
+          bottom: -2px;
+          margin-left: -5px;
+
+          border-width: 0 5px 6px 5px;
+          border-color: transparent transparent lighten(@sdl-ribbon-background, 2%) transparent;
+        }
+      }
+
+      &.disabled > a {
+        cursor: not-allowed;
+
+        color: @sdl-gray-fiftythree;
+        text-shadow: none;
+
+        &:hover,
+        &:focus,
+        &:active {
+          color: @sdl-gray-fiftythree;
+          .box-shadow(none);
+        }
+      }
+
+      > a {
+        position: relative;
+        padding-top: 7px;
+        padding-bottom: 5px;
+        line-height: @line-height-computed;
+        font-size: @font-size-small;
+
+        color: @sdl-white;
+        font-weight: normal;
+        text-shadow: 1px 1px 0 @sdl-gray-dark-slate;
+
+
+        &:hover,
+        &:focus,
+        &:active {
+          background-color: @sdl-blue-steel;
+          .box-shadow(~"inset 0 1px 0 rgba(255, 255, 255, .25)");
+        }
+
+      }
+    }
+
+  }
+
+  &-brand {
+    float: left;
+    width: 200px;
+    height: @navbar-height;
+    padding: 6px @navbar-padding-horizontal;
+
+    background: transparent url('../img/logo.png') no-repeat center;
+
+    font-size: @font-size-base;
+    font-weight: bold;
+    color: @sdl-gray-light-sgi;
+
+    span {
+      display: block;
+      width: 0;
+      height: 0;
+      overflow: hidden;
+    }
+  }
+}

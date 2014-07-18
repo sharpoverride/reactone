@@ -1,0 +1,135 @@
+.ue-activity-indicator-wrapper {
+  position: fixed;
+
+  top:0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  background-color: rgba(255, 255, 255, 0.94);
+  z-index: @zindex-activity-indicator;
+}
+
+.ue-activity-indicator {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  width: 270px;
+  height: 70px;
+  margin-top: -37px;
+  margin-left: -135px;
+
+  text-align: center;
+  font-family:'Helvetica Neue', Arial, sans-serif;
+  font-size: 15px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #818b99;
+
+  &:after {
+    content: attr(data-activity-message);
+
+    position: absolute;
+    display: block;
+
+    top: 100px;
+    width: 270px;
+  }
+
+  &:before {
+    content:'';
+
+    position: absolute;
+    display: block;
+
+    height: 74px;
+    width: 74px;
+    top: -16px;
+    left: 84px;
+
+    border: 14px solid #efeff1;
+    border-radius: 100%;
+    background: url("../img/sdl-logo-icon.svg") no-repeat center;
+    background-size: 60%;
+  }
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+
+  margin: 0 auto;
+
+  border: 10px solid #d1d7e1;
+  border-top: 10px solid #707e9d;
+  border-radius: 100%;
+
+  -webkit-animation: spinner 0.4s infinite linear;
+  -moz-animation: spinner 0.4s infinite linear;
+  -ms-animation: spinner 0.4s infinite linear;
+  -o-animation: spinner 0.4s infinite linear;
+  animation: spinner 0.4s infinite linear;
+}
+
+@keyframes spinner {
+  from {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(359deg);
+    -moz-transform: rotate(359deg);
+    -o-transform: rotate(359deg);
+    -ms-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+
+@-moz-keyframes spinner {
+  from {
+    -moz-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -moz-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+
+@-webkit-keyframes spinner {
+  from {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+
+@-ms-keyframes spinner {
+  from {
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -ms-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+
+@-o-keyframes spinner {
+  from {
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -o-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}

@@ -1,0 +1,187 @@
+.ue-tag {
+  position: relative;
+  display: inline-block;
+  height: 16px;
+  margin: 0 1px;
+  padding: 0 5px;
+
+  font-size: @font-size-smaller;
+  font-weight: normal;
+  line-height: 16px;
+  color: @sdl-tag-font-color;
+  vertical-align: baseline;
+
+  // Orange
+  background-color: @sdl-tag-color;
+  text-shadow: @sdl-tag-shadow;
+
+  .border-radius(3px);
+  .user-select();
+
+  // Displayed text
+  &:before {
+    content: attr(data-display-content);
+  }
+
+  // Pointer cursor on hover
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: darken(@sdl-tag-color, 5%);
+    .cursor-pointer();
+  }
+
+  // Disabled state
+  &.disabled {
+    .opacity(0.4);
+  }
+
+  // Start tag definiton
+  &-start {
+    margin-right: 10px;
+    padding-right: 3px;
+
+    .border-radiuses(0, 0, 3px, 3px);
+
+    // Create right arrow
+    &:after {
+      .triangle(right, 8px, @sdl-tag-color);
+    }
+
+    // Handle arrow color on tag hover, focus & active
+    &:hover,
+    &:focus,
+    &:active {
+      &:after {
+        .triangle(right, 8px, darken(@sdl-tag-color, 5%));
+      }
+    }
+
+    // Filename start tag definiton
+    &.ue-tag-file {
+      &:after {
+        .triangle(right, 8px, @sdl-tag-file-color);
+      }
+    }
+  }
+
+  // End tag definiton
+  &-end {
+    margin-left: 10px;
+    padding-left: 3px;
+
+    .border-radiuses( 3px, 3px, 0, 0);
+
+    &:after {
+      .triangle(left, 8px, @sdl-tag-color);
+    }
+
+    // Handle arrow color on tag hover, focus & active
+    &:hover,
+    &:focus,
+    &:active {
+      &:after {
+        .triangle(left, 8px, darken(@sdl-tag-color, 5%));
+      }
+    }
+
+    // End tag definiton
+    &.ue-tag-file {
+      &:after {
+        .triangle(left, 8px, @sdl-tag-file-color);
+      }
+    }
+  }
+
+  &-start:after,
+  &-end:after {
+    margin-top: 0;
+  }
+
+  // Filename tag
+  &-file {
+    background-color: @sdl-tag-file-color;
+    text-shadow: @sdl-tag-file-shadow;
+    color: @sdl-tag-file-font-color;
+    vertical-align: 45%;
+
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: @sdl-tag-file-color;
+    }
+  }
+
+  &-locked-start,
+  &-locked-end {
+    width: 14px;
+    margin: 0 1px;
+
+    background: transparent url("../img/segment-state-loked.png") no-repeat center;
+    border: 0 none;
+
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: transparent;
+    }
+  }
+}
+
+.ue-tag + .ue-tag {
+  margin-left: 3px;
+
+  &.ue-tag-start {
+    margin-left: 3px;
+    margin-right: 10px;
+
+    &:first-child {
+      margin-left: 1px;
+    }
+  }
+
+  &.ue-tag-end {
+    margin-left: 10px;
+    margin-right: 3px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+.ue-tag-wrapper {
+//  &:before,
+//  &:after {
+//    content: "\200C";
+//    display: inline;
+//  }
+
+  // Used only for debugging
+  &.dbg-show-borders {
+    &:before,
+    &:after {
+      border: 1px solid #e6005c;
+    }
+  }
+
+  &.active {
+    > .ue-tag {
+      background-color: darken(@sdl-tag-color, 10%);
+      color: @sdl-off-white;
+      text-shadow: 0 -1px 0 fade(@sdl-tag-font-color, 40%);
+
+      &-start {
+        &:after {
+          .triangle(right, 8px, darken(@sdl-tag-color, 10%));
+        }
+      }
+
+      &-end {
+        &:after {
+          .triangle(left, 8px, darken(@sdl-tag-color, 10%));
+        }
+      }
+    }
+  }
+}

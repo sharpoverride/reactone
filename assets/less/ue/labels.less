@@ -1,0 +1,79 @@
+.ue-translation-origin() {
+  display: inline-block;
+  width: 34px;
+  height: 18px;
+  margin: 0;
+  padding: 3px 0 1px;
+
+  font-family: @font-family-sans-serif;
+  font-weight: normal;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+
+  box-sizing: border-box;
+}
+
+// TODO: make a mixin to be able to generate all classes
+// .ue-make-translation-origin(@name, @color, @background, @background-fade, @border-color, @border-darkness) {
+//   .ue-translation-origin();
+//   color: @color;
+//   text-shadow: 1px 1px 0 fade(@background, @background-fade);
+
+//   background-color: transparent;
+//   border: 1px solid  darken(@border-color, @border-darkness);
+// }
+
+.ue-translation-origin-transparent,
+.ue-translation-origin-green,
+.ue-translation-origin-gray,
+.ue-translation-origin-blue,
+.ue-translation-origin-yellow {
+  .ue-translation-origin();
+}
+
+.ue-translation-origin-transparent {
+  color: @sdl-gray-fiftythree;
+  text-shadow: 1px 1px 0 fade(@sdl-white, 40%);
+
+  background-color: transparent;
+  border: 1px solid  darken(@sdl-gray-fiftythree, 5%);
+}
+
+// 'cm': 'green'
+.ue-translation-origin-green {
+  color: @sdl-white;
+  text-shadow: 1px 1px 0 fade(@sdl-green-dark, 20%);
+
+  background-color: #7AC124;
+  border: 1px solid darken(#7AC124, 5%);
+}
+
+
+// 'pm': 'gray'
+.ue-translation-origin-gray {
+  color: @sdl-white;
+  text-shadow: 1px 1px 0 fade(@sdl-gray-dark-slate, 20%);
+
+  background-color: @sdl-gray-light-sgi;
+  border: 1px solid  darken(@sdl-gray-light-sgi, 5%);
+}
+
+// 'at': 'blue'
+.ue-translation-origin-blue {
+  color: @sdl-white;
+  text-shadow: 1px 1px 0 fade(@sdl-gray-dark-slate, 20%);
+
+  background-color: #5491F6;
+  border: 1px solid  darken(#5491F6, 5%);
+}
+
+// 'ap': 'yellow-green'
+.ue-translation-origin-yellow {
+  color: @sdl-white;
+  text-shadow: 1px 1px 0 fade(@sdl-green-dark, 20%);
+
+  background-color: @sdl-yellow;
+  border: 1px solid darken(@sdl-yellow, 5%);
+}

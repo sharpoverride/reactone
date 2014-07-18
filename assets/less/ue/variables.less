@@ -1,0 +1,80 @@
+// SDL - Universal Editor
+// UI Palette (http://jira.global.sdl.corp:8090/confluence/display/UX/UI+Palette)
+
+// Blues
+@sdl-blue-dodger:        #296ACC; // RGB 36 103 207
+@sdl-blue-light-slate:   #94B5E5; // RGB 148 181 229
+@sdl-blue-light:         #A9C3EB; // RGB 169 192 235
+@sdl-blue-lighter:       #BED2F0; // RGB 190 210 240
+@sdl-blue-steel-light:   #D4E1F5; // RGB 212 225 245
+@sdl-blue-steel-lighter: #E9F0FA; // RGB 233 240 250
+@sdl-blue-light-sgi:     #7D8BAB; // RGB 124 138 172
+@sdl-blue-steel:         #576172; // RGB 87 97 114
+
+// Grays
+@sdl-gray-dark-slate:    #262C39; // RGB 38 44 57
+@sdl-gray-darker:        #353B46; // RGB 53 59 70
+@sdl-gray-dark:          #454B53; // RGB 69 75 83
+@sdl-gray-light:         #5C636D; // RGB 92 99 109
+@sdl-gray-lighter:       #92959C; // RGB 146 149 156
+@sdl-gray-thirtythree:   #555555; // RGB 85 85 85
+@sdl-gray-fiftythree:    #878787; // RGB 135 135 135
+@sdl-gray-light-sgi:     #AAAAAA; // RGB 170 170 170
+@sdl-gray-silver:        #CFCFCF; // RGB 207 207 207
+@sdl-gray-ninetythree:   #EDEDED; // RGB 237 237 237
+
+// Whites
+@sdl-white:              #FFFFFF; // RGB 255 255 255
+@sdl-off-white:          #FAFAFA; // RGB 250 250 250
+@sdl-white-smoke:        #F3F3F3; // RGB 243 243 243
+
+// Secondary colors
+@sdl-green-dark:         #067355; // RGB 6 115 85
+@sdl-green-light:        #7BC67D; // RGB 123 198 125
+@sdl-red-dark:           #902C21; // RGB 144 44 33
+@sdl-orange:             #FF834F; // RGB 255 131 79
+@sdl-golden:             #AE772A; // RGB 174 119 42
+@sdl-yellow:             #FEB630; // RGB 254 182 48
+
+// Editor colors
+@sdl-ribbon-background:  #EBEFF2; // RGB 235 239 242
+
+// Tags/placeholder  color
+@sdl-tag-color:           @sdl-blue-light-slate;
+@sdl-tag-font-color:      @sdl-gray-dark-slate;
+@sdl-tag-shadow:          0 1px 0 fade(@sdl-white, 40%);
+
+// File tags color
+@sdl-tag-file-color:      @sdl-yellow;
+@sdl-tag-file-font-color: @sdl-gray-dark-slate;
+@sdl-tag-file-shadow:     0 1px 0 fade(@sdl-white, 40%);
+
+
+// Body background color
+// @body-bg: @sdl-white-smoke;
+
+// Reduce font size a bit
+@font-size-base:    13px;
+@font-size-editor:  14px;
+@font-size-smaller: ceil((@font-size-base * 0.80));
+
+// Unit-less line-height
+@sdl-editor-row-height: 24px;
+@sdl-editor-line-height: unit(@sdl-editor-row-height) / unit(@font-size-editor); // 24/14 = ~1.7142857142857142857142857142857;
+
+// Navbar variables
+@navbar-height:          30px;
+@navbar-height-computed: @navbar-height + 2; // Add border-top & border-bottom
+
+// Borders color
+@sdl-dark-border:  @sdl-gray-silver;
+@sdl-light-border: @sdl-white;
+
+// Font icon path
+@icon-font-path: "../font/";
+
+// Sidebar width
+@sidebar-width: 201px;
+
+// Activity indicator z-index:
+@zindex-activity-indicator: 1040;

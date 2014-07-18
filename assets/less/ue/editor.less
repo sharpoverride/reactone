@@ -1,0 +1,185 @@
+.ue-gutter,
+.ue-status {
+  position: relative;
+  float: left;
+
+  vertical-align: middle;
+  line-height: @sdl-editor-line-height;
+
+  background-color: @sdl-off-white;
+  border-right: 1px solid @sdl-dark-border;
+
+  .ue-cell {
+    display: block;
+    height: 27px;
+    min-width: 32px;
+    padding: 4px 4px 3px;
+
+    font-family: @font-family-monospace;
+    font-size: @font-size-small;
+    color: @sdl-gray-dark;
+    text-align: right;
+    vertical-align: baseline;
+    line-height: @sdl-editor-line-height;
+    white-space: pre-wrap;
+
+    .user-select();
+
+    &:nth-child(n+2):nth-child(even) {
+      background-color: @sdl-gray-ninetythree;
+
+      &:last-child {
+        background-color: transparent;
+      }
+    }
+  }
+}
+
+.ue-status {
+  width: 80px;
+
+  // Status cell has the incons/text aligned to the right
+  .ue-cell {
+    text-align: left;
+    white-space: pre-wrap;
+
+    .col-first,
+    .col-second,
+    .col-third {
+      display: inline-block;
+    }
+
+    .col-first,
+    .col-third {
+      width: 16px;
+    }
+
+    .col-second {
+      width: 38px;
+      text-align: center;
+    }
+
+    .col-third {
+      text-align: right;
+
+      [class^="status-icon-"],
+      [class*=" status-icon-"] {
+        background-position: top right;
+      }
+    }
+  }
+}
+
+// Target & source rows (filename and segment)
+.ue-file,
+.ue-segment {
+  height: 27px;
+  padding: 1px 5px 2px;
+  line-height: @sdl-editor-line-height;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.ue-file {
+  font-size: 27px;
+  line-height: 1;
+}
+
+.ue-segment {
+  position: relative;
+  // Set transparency on locked segments
+  &-locked {
+    // > .ue-inline-content {
+    //   .opacity(0.65);
+    // }
+    .ue-text {
+      .opacity(0.65);
+    }
+  }
+
+
+  > .ue-inline-content {
+    position: relative;
+    display: block;
+    top: 0;
+  }
+}
+
+// Source and target layout
+.ue-source,
+.ue-target {
+  width: auto;
+  overflow: hidden;
+
+  font-size: @font-size-editor;
+
+  // Content editable styles
+  .ue-editable {
+    &[contenteditable="true"]:active,
+    &[contenteditable="true"]:focus {
+      display: block;
+      line-height: @sdl-editor-line-height;
+      outline: none;
+    }
+  }
+
+  .ue-segment:nth-child(even) {
+    background-color: @sdl-gray-ninetythree;
+  }
+
+}
+
+.ue-row {
+  line-height: @sdl-editor-line-height;
+
+  &-active {
+    background-color: @sdl-blue-steel-light !important; // it needs to be important, otherwise it wouldn't be displayed
+  }
+}
+
+// Solves white background to be displayed
+// on the higlighted row when copy/pasting content
+.ue-text {
+  vertical-align: baseline;
+  text-rendering: optimizeSpeed;
+  background-color: transparent;
+
+  &-invisible {
+    // padding: 0 1px;
+
+    // font-family: @font-family-monospace;
+    font-weight: bold;
+    line-height: @sdl-editor-line-height;
+
+    color: @sdl-gray-dark;
+  }
+}
+
+.ue-outside-segment-content {
+  .hide;
+}
+
+// Inline content wrapper
+.ue-inline-content {
+  display: inline;
+  white-space: pre-wrap;
+  vertical-align: baseline;
+}
+
+.ue-locked-content:extend(.ue-inline-content) {
+  .ue-text {
+    .opacity(0.65);
+  }
+}
+
+.ue-activity-indicator {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  z-index: @zindex-activity-indicator;
+
+  background: rgba(255, 255, 255, 0.95) url("../img/loading-en.gif") no-repeat center;
+}

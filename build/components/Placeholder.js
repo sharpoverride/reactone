@@ -1,2 +1,2 @@
 ﻿/** @jsx React.DOM */
-var React = require('react');var Placeholder = React.createClass({  render: function() {    return (      <span className="placeholder">      [{this.props.displayText}]      </span>    )  }});module.exports = Placeholder;
+var React = require('react');var Placeholder = React.createClass({  render: function() {    return (      <span className="ue-tag" data-display-content={this.props.displayText}/>    )  }});module.exports = Placeholder;

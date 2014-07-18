@@ -1,0 +1,2 @@
+﻿/** @jsx React.DOM */
+var React = require('react');var InnerContent = require('./InnerContent');var SourceColumn = React.createClass({  render: function () {    var childNodes = this.props.segments.map( function(segment, index) {      return (<InnerContent          key={index}          type="source"          content={segment.source}          />)    });    return (<div className="ue-source">      {childNodes}    </div>);  }});module.exports = SourceColumn;

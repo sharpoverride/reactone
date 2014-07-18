@@ -1,0 +1,81 @@
+.border-radiuses(@topright: 0, @bottomright: 0, @bottomleft: 0, @topleft: 0) {
+  -webkit-border-bottom-right-radius: @bottomright;
+   -webkit-border-bottom-left-radius: @bottomleft;
+     -webkit-border-top-right-radius: @topright;
+      -webkit-border-top-left-radius: @topleft;
+
+         -moz-border-radius-topright: @topright;
+          -moz-border-radius-topleft: @topleft;
+      -moz-border-radius-bottomright: @bottomright;
+       -moz-border-radius-bottomleft: @bottomleft;
+
+             border-top-right-radius: @topright;
+          border-bottom-right-radius: @bottomright;
+           border-bottom-left-radius: @bottomleft;
+              border-top-left-radius: @topleft;
+
+  .background-clip(padding-box);
+}
+
+.border-radius(@radius: 5px) {
+  -webkit-border-radius: @radius;
+     -moz-border-radius: @radius;
+          border-radius: @radius;
+
+  -webkit-background-clip: padding-box;
+     -moz-background-clip: padding;
+          background-clip: padding-box;
+}
+
+.background-clip(@argument: padding-box) {
+  -webkit-background-clip: @argument;
+     -moz-background-clip: @argument;
+          background-clip: @argument;
+}
+
+.user-select(@argument: none) {
+  -webkit-user-select: @argument;
+     -moz-user-select: @argument;
+      -ms-user-select: @argument;
+          user-select: @argument;
+}
+
+// Generate CSS triangles
+.triangle-base() {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+.triangle(@direction, @size, @color) when (@direction = up) {
+  .triangle-base();
+  border-left: @size solid transparent !important;
+  border-right: @size solid transparent !important;
+  border-bottom: @size solid @color;
+}
+.triangle(@direction, @size, @color) when (@direction = down) {
+  .triangle-base();
+  border-left: @size solid transparent !important;
+  border-right: @size solid transparent !important;
+  border-top: @size solid @color;
+}
+.triangle(@direction, @size, @color) when (@direction = left) {
+  .triangle-base();
+  left: -@size;
+  border-top: @size solid transparent !important;
+  border-bottom: @size solid transparent !important;
+  border-right: @size solid @color;
+}
+.triangle(@direction, @size, @color) when (@direction = right) {
+  .triangle-base();
+  right: -@size;
+  border-top: @size solid transparent !important;
+  border-bottom: @size solid transparent !important;
+  border-left: @size solid @color;
+}
+
+.opacity (@opacity: 0.5) {
+  -webkit-opacity: @opacity;
+     -moz-opacity: @opacity;
+          opacity: @opacity;
+}
